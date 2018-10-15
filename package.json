@@ -1,0 +1,29 @@
+{
+  "name": "netsuite-tba-oauth",
+  "version": "0.5.0",
+  "description": "NetSuite Token Based Authentication Module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RezolveTecnologia/netsuite-tba-oauth.git"
+  },
+  "keywords": [
+    "tba",
+    "oauth",
+    "netsuite",
+    "restlet"
+  ],
+  "author": "Jaime Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RezolveTecnologia/netsuite-tba-oauth/issues"
+  },
+  "homepage": "https://github.com/RezolveTecnologia/netsuite-tba-oauth#readme",
+  "dependencies": {
+    "oauth-1.0a": "^2.2.4",
+    "request": "^2.88.0"
+  }
+}
