@@ -54,8 +54,6 @@ NetSuiteOAuth.prototype.get = function() {
             method: this.request_data.method,
             headers: this.headers
         }, function(error, response, body) {
-            // Process your data here
-            console.log(body);
             if (error || response.statusCode.toString()[0] != 2) {
                 console.log('Body data:', body);
                 reject(body || error);
@@ -77,8 +75,6 @@ NetSuiteOAuth.prototype.post = function(data) {
             json: data,
             headers: this.headers
         }, function(error, response, body) {
-            // Process your data here
-            console.log(body);
             if (error || response.statusCode.toString()[0] != 2) {
                 console.log('Body data:', body);
                 reject(body || error);
@@ -100,8 +96,6 @@ NetSuiteOAuth.prototype.put = function(data) {
             json: data,
             headers: this.headers
         }, function(error, response, body) {
-            // Process your data here
-            console.log(body);
             if (error || response.statusCode.toString()[0] != 2) {
                 console.log('Body data:', body);
                 reject(body || error);
