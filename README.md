@@ -18,7 +18,7 @@ PUT (put function)
 
 Open a terminal session and enter the following command:
 
-``npm install netsuite-tba-auth --save``
+``npm install netsuite-tba-oauth --save``
 
 ## Usage
 
