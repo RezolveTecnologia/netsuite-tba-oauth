@@ -5,8 +5,8 @@ NetSuite Token Based Authentication Module
 This auxiliary module abstracts the authentication mechanism used by NetSuite Restlets.
 
 ## Supported authentication methods:
-Token Based Authentication (TBA)
-NLAuth not supported. Use the netsuite-restlet module if you need NLAuth authentication.
+* Token Based Authentication (TBA)
+* Note: NLAuth not supported. Use the netsuite-restlet module if you need NLAuth authentication.
 
 ## Supported Restlet methods:
 
