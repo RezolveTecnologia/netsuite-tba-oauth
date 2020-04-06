@@ -80,7 +80,14 @@ NetSuiteOAuth.prototype.post = function(data) {
                 reject(body || error);
             }
             else {
-                if (typeof body == 'string') body = JSON.parse(body);
+                if (typeof body == 'string') {
+                    try {
+                        body = JSON.parse(body);
+                    } catch (error){
+                        console.log('unable to parse response body');
+                        reject(error);
+                    }
+                }
                 resolve(body || error);
             }
         });
@@ -101,7 +108,14 @@ NetSuiteOAuth.prototype.put = function(data) {
                 reject(body || error);
             }
             else {
-                if (typeof body == 'string') body = JSON.parse(body);
+                if (typeof body == 'string') {
+                    try {
+                        body = JSON.parse(body);
+                    } catch (error){
+                        console.log('unable to parse response body');
+                        reject(error);
+                    }
+                }
                 resolve(body || error);
             }
         });
