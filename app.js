@@ -17,19 +17,23 @@ module.exports = NetSuiteOAuth;
  * @param tokenId
  * @param tokenSecret
  * @param account
+ * @param signature_method
  * @returns {PromiseLike<ArrayBuffer>}
  * @constructor
  */
-function NetSuiteOAuth(url, method, consumerKey, consumerSecret, tokenId, tokenSecret, account) {
+ function NetSuiteOAuth(url, method, consumerKey, consumerSecret, tokenId, tokenSecret, account, signature_method = 'HMAC-SHA256') {
+    if (!['HMAC-SHA256', 'HMAC-SHA1'].includes(signature_method))
+        throw `Invalid signature method: ${signature_method}. Use HMAC-SHA1 or HMAC-SHA256`
+
     this.oauth = OAuth({
         consumer: {
             key: consumerKey,
             secret: consumerSecret
         },
         realm: account,
-        signature_method: 'HMAC-SHA1',
+        signature_method,
         hash_function(base_string, key) {
-            return crypto.createHmac('sha1', key).update(base_string).digest('base64');
+            return crypto.createHmac(signature_method.toLowerCase().replace('hmac-', ''), key).update(base_string).digest('base64');
         }
     });
 
