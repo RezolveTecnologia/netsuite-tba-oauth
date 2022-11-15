@@ -99,6 +99,34 @@ NetSuiteOAuth.prototype.post = function(data) {
     });
 };
 
+NetSuiteOAuth.prototype.patch = function(data) {
+    return new Promise((resolve, reject) => {
+        request({
+            url: this.request_data.url,
+            method: this.request_data.method,
+            json: data,
+            headers: this.headers
+        }, function(error, response, body) {
+            if (error || response.statusCode.toString()[0] != 2) {
+                console.log('Body data:', body);
+                reject(body || error);
+            }
+            else {
+                if (typeof body == 'string') {
+                    try {
+                        body = JSON.parse(body);
+                    } catch (error){
+                        console.log('unable to parse response body');
+                        reject(error);
+                    }
+                }
+                resolve(body || error);
+            }
+        });
+
+    });
+};
+
 NetSuiteOAuth.prototype.put = function(data) {
     return new Promise((resolve, reject) => {
         request({
