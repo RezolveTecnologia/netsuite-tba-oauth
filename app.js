@@ -2,7 +2,7 @@
 
 // Dependencies
 //const request = require('request');
-const fetch = await import("node-fetch");
+const fetch = require("node-fetch");
 const OAuth = require("oauth-1.0a");
 const crypto = require("crypto");
 
